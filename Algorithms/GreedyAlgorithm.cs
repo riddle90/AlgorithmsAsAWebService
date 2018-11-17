@@ -1,3 +1,4 @@
+using System.Linq;
 using Domain.Entities.BagEntity;
 using Domain.Entities.ItemEntity;
 using Runner.Algorithms;
@@ -17,7 +18,23 @@ namespace Algorithms
         
         public void Optimize()
         {
-            throw new System.NotImplementedException();
+            Bag bag = _bagRepository.GetBag();
+            var items = _itemRepository.GetAllItems().OrderByDescending(x => x.ValuePerUnitWeight);
+
+            foreach (var item in items)
+            {
+                if (item.Weight <= bag.RemainingCapacity)
+                {
+                    bag.UpdateSolution(item);
+                    _itemRepository.UpdateSolution(item);
+                }
+
+                if (bag.RemainingCapacity == 0)
+                {
+                    break;
+                }
+
+            }
         }
     }
 }

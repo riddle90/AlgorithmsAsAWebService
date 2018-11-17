@@ -10,6 +10,7 @@ namespace Domain.Entities.BagEntity
             Size = size;
             RemainingCapacity = this.Size;
             _chosenItems = new List<Item>();
+            _solution = new List<int>();
             ValueInsideBag = 0;
         }
 
@@ -21,11 +22,18 @@ namespace Domain.Entities.BagEntity
 
         private List<Item> _chosenItems;
 
-        public void AddItem(Item item)
+        private List<int> _solution;
+
+        public void UpdateSolution(Item item)
         {
             _chosenItems.Add(item);
             this.RemainingCapacity -= item.Weight;
             ValueInsideBag += item.Value;
+        }
+
+        public List<int> GetSolution()
+        {
+            return _solution;
         }
         
     }

@@ -1,53 +1,44 @@
 using System.Collections.Generic;
 using System.Linq;
+using System.Runtime.CompilerServices;
 using Domain.Entities.ItemEntity;
 
-namespace Infrastructure.Repository.Item
+namespace Infrastructure.Repository.ItemRepositoryBuilder
 {
     public class ItemRepository : IItemRepository
     {
-        private List<Domain.Entities.ItemEntity.Item> _allItems;
-        private SortedList<Domain.Entities.ItemEntity.Item, double> _allUnpickedItems;
+        private List<Item> _allItems;
+        private Dictionary<Item, int> _indexOfItem;
         private List<int> _solution;
-        private Dictionary<Domain.Entities.ItemEntity.Item, int> _indexOfItem;
 
         public ItemRepository()
         {
             _allItems = new List<Domain.Entities.ItemEntity.Item>();
-            _allUnpickedItems = new SortedList<Domain.Entities.ItemEntity.Item, double>();
-            _solution = new List<int>();
             _indexOfItem = new Dictionary<Domain.Entities.ItemEntity.Item, int>();
+            _solution = new List<int>();
         }
 
         public void AddItem(Domain.Entities.ItemEntity.Item item)
         {
             _indexOfItem.Add(item, _allItems.Count);
             _allItems.Add(item);
-            _allUnpickedItems.Add(item, item.Value);
             _solution.Add(0);
-            
-
         }
 
-        public Domain.Entities.ItemEntity.Item GetUnpickedItemWithHighestValuePerUnitWeight()
+        public List<Item> GetAllItems()
         {
-            return _allUnpickedItems.First().Key;
+            return _allItems;
         }
 
-        public void RemoveFromUnpickedAfterSuccess(Domain.Entities.ItemEntity.Item item)
+        public void UpdateSolution(Item item)
         {
-            _allUnpickedItems.Remove(item);
             _solution[_indexOfItem[item]] = 1;
-        }
-
-        public void RemoveFromUnpickedAfterFailure(Domain.Entities.ItemEntity.Item item)
-        {
-            _allUnpickedItems.Remove(item);
         }
 
         public List<int> GetSolution()
         {
             return _solution;
         }
+       
     }
 }

@@ -4,7 +4,12 @@ namespace knapsack.Controllers
     {
         public string Index()
         {
-            return "This has reached HomeController, Houston!";
+            return "Service Started";
+        }
+
+        public void Optimize()
+        {
+            return;
         }
     }
 }

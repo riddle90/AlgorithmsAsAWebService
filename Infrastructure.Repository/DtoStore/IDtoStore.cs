@@ -7,5 +7,7 @@ namespace Infrastructure.Repository.DtoStore
         Task<string> GetBagData();
 
         Task<string> GetItemData();
+
+        Task WriteSolution(string finalOutput);
     }
 }

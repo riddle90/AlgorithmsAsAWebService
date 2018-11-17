@@ -1,5 +1,8 @@
 using System.IO;
+using System.Text;
 using System.Threading.Tasks;
+using Domain.Entities.BagEntity;
+using Domain.Entities.ItemEntity;
 using Microsoft.Extensions.Configuration;
 
 namespace Infrastructure.Repository.DtoStore
@@ -7,7 +10,7 @@ namespace Infrastructure.Repository.DtoStore
     public class DtoStore : IDtoStore
     {
         private readonly IConfiguration _configuration;
-
+        
         public DtoStore(IConfiguration configuration)
         {
             _configuration = configuration;
@@ -28,6 +31,14 @@ namespace Infrastructure.Repository.DtoStore
             {
                 string data = await streamReader.ReadToEndAsync();
                 return data;
+            }
+        }
+
+        public async Task WriteSolution(string finalOutput)
+        {
+            using (StreamWriter streamWriter = new StreamWriter(_configuration["OutputFileName"]))
+            {
+                await streamWriter.WriteAsync(finalOutput);
             }
         }
     }

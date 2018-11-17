@@ -22,7 +22,7 @@ namespace Infrastructure.Repository.BagBuilder
             var data = await _dtoStore.GetBagData();
             var properties = data.Split();
 
-            var parseSuccessful = ParseValues.ParseFromStringToInt(properties[0], out int capacity);
+            var parseSuccessful = ParseValues.ParseFromStringToInt(properties[1], out int capacity);
 
             if (parseSuccessful)
             {

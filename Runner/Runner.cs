@@ -9,12 +9,14 @@ namespace Runner
         private readonly IBagBuilder _bagBuilder;
         private readonly IItemBuilder _itemBuilder;
         private readonly IOptimizationAlgorithm _optimizationAlgorithm;
+        private readonly ISolutionBuilder _solutionBuilder;
 
-        public Runner(IBagBuilder bagBuilder, IItemBuilder itemBuilder, IOptimizationAlgorithm optimizationAlgorithm)
+        public Runner(IBagBuilder bagBuilder, IItemBuilder itemBuilder, IOptimizationAlgorithm optimizationAlgorithm, ISolutionBuilder solutionBuilder)
         {
             _bagBuilder = bagBuilder;
             _itemBuilder = itemBuilder;
             _optimizationAlgorithm = optimizationAlgorithm;
+            _solutionBuilder = solutionBuilder;
         }
         
         public async Task RunOptimization()
@@ -23,6 +25,8 @@ namespace Runner
             await _itemBuilder.Build();
             
             _optimizationAlgorithm.Optimize();
+
+            await _solutionBuilder.WriteSolution();
         }
     }
 }

@@ -1,8 +1,8 @@
+using System;
 using System.Linq;
 using System.Threading.Tasks;
 using Domain.Entities.ItemEntity;
 using Infrastructure.Repository.DtoStore;
-using Infrastructure.Repository.Item;
 using Runner.IBuilder;
 using Utility;
 
@@ -24,11 +24,17 @@ namespace Infrastructure.Repository.ItemRepositoryBuilder
             var data = await _dtoStore.GetItemData();
             var dataSplitByLine = data.Split('\n');
 
-            for (int i = 1; i < dataSplitByLine.Count(); i++)
+            bool valuesParsed = ParseValues.ParseFromStringToInt(dataSplitByLine[0].Split()[0], out int count);
+
+            if (!valuesParsed)
+            {
+                throw new Exception("Count Values is wrong");
+            }
+            for (int i = 1; i <= count; i++)
             {
                 var properties = dataSplitByLine[i].Split();
 
-                bool valuesParsed = ParseValues.ParseFromStringToInt(properties[0], out int value); 
+                valuesParsed = ParseValues.ParseFromStringToInt(properties[0], out int value); 
                 valuesParsed = ParseValues.ParseFromStringToInt(properties[1], out int weight) && valuesParsed;
 
                 if (valuesParsed)

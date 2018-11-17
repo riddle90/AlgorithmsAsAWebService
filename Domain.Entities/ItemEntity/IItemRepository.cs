@@ -6,11 +6,9 @@ namespace Domain.Entities.ItemEntity
     {
         void AddItem(Item item);
 
-        Item GetUnpickedItemWithHighestValuePerUnitWeight();
+        List<Item> GetAllItems();
 
-        void RemoveFromUnpickedAfterSuccess(Item item);
-
-        void RemoveFromUnpickedAfterFailure(Item item);
+        void UpdateSolution(Item item);
 
         List<int> GetSolution();
     }
