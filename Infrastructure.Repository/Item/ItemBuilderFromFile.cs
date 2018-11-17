@@ -1,7 +1,8 @@
 using System.Linq;
 using System.Threading.Tasks;
-using Domain.Entities.Items;
+using Domain.Entities.ItemEntity;
 using Infrastructure.Repository.DtoStore;
+using Utility;
 
 namespace Infrastructure.Repository.Item
 {
@@ -23,8 +24,18 @@ namespace Infrastructure.Repository.Item
 
             for (int i = 1; i < dataSplitByLine.Count(); i++)
             {
-                var item = dataSplitByLine[i].Split();
+                var properties = dataSplitByLine[i].Split();
+
+                bool valuesParsed = ParseValues.ParseFromStringToInt(properties[0], out int value); 
+                valuesParsed = ParseValues.ParseFromStringToInt(properties[1], out int weight) && valuesParsed;
+
+                if (valuesParsed)
+                {
+                    var item = new Domain.Entities.ItemEntity.Item(value, weight);
+                    _itemRepository.AddItem(item);
+                }
             }
         }
+        
     }
 }

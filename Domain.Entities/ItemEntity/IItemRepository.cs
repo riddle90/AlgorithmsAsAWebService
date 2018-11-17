@@ -1,6 +1,6 @@
 using System.Collections.Generic;
 
-namespace Domain.Entities.Items
+namespace Domain.Entities.ItemEntity
 {
     public interface IItemRepository
     {

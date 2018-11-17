@@ -1,8 +1,8 @@
-namespace Domain.Entities.Items
+namespace Domain.Entities.ItemEntity
 {
     public class Item
     {
-        public Item(int weight, int value)
+        public Item(int value, int weight)
         {
             Weight = weight;
             Value = value;

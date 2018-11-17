@@ -1,5 +1,5 @@
 using System.Collections.Generic;
-using Domain.Entities.Items;
+using Domain.Entities.ItemEntity;
 
 namespace Domain.Entities
 {
