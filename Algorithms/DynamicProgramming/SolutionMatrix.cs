@@ -4,34 +4,22 @@ namespace Algorithms.DynamicProgramming
 {
     public class SolutionMatrix
     {
-        private int _numberOfRows;
-        private int _numberOfColumns;
-        public int[,] Matrix { get; private set; }
+        private int[,] _matrix;
 
         public SolutionMatrix(int rows, int columns)
         {
-            Matrix = new int[rows,columns];
-            _numberOfColumns = columns;
-            _numberOfRows = rows;
+            _matrix = new int[rows,columns];
         }
 
         public void UpdateValue(int row, int column, int value)
         {
-            Matrix[row, column] = value;
+            _matrix[row, column] = value;
         }
 
-        public int GetRowGivenValueAndColumn(int value, int column)
+        public int GetValue(int row, int column)
         {
-            int returnValue = 0;
-            for (int row = _numberOfRows - 1; row > 0 ; row--)
-            {
-                if (Matrix[row, column] == value)
-                {
-                    returnValue = row;
-                }
-            }
-
-            return returnValue;
+            return _matrix[row, column];
         }
+
     }
 }
