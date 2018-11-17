@@ -2,9 +2,11 @@ using System.Linq;
 using System.Threading.Tasks;
 using Domain.Entities.ItemEntity;
 using Infrastructure.Repository.DtoStore;
+using Infrastructure.Repository.Item;
+using Runner.IBuilder;
 using Utility;
 
-namespace Infrastructure.Repository.Item
+namespace Infrastructure.Repository.ItemRepositoryBuilder
 {
     public class ItemBuilderFromFile : IItemBuilder
     {

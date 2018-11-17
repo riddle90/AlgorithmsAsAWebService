@@ -1,7 +1,7 @@
 using System.Collections.Generic;
 using Domain.Entities.ItemEntity;
 
-namespace Domain.Entities
+namespace Domain.Entities.BagEntity
 {
     public class Bag
     {

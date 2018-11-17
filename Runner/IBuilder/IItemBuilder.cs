@@ -1,6 +1,6 @@
 using System.Threading.Tasks;
 
-namespace Infrastructure.Repository.Item
+namespace Runner.IBuilder
 {
     public interface IItemBuilder
     {
