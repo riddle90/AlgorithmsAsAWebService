@@ -19,6 +19,11 @@ namespace Algorithms.DynamicProgramming
         }
         public void Optimize()
         {
+            if (!AlgorithmPicker.ShouldRunOnThisDataSet(this, _itemRepository.GetItemCount()))
+            {
+                return;
+            }
+            
             var bag = _bagRepository.GetBag();
             var items = _itemRepository.GetAllItems();
             

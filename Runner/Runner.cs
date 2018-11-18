@@ -1,3 +1,4 @@
+using System.Collections.Generic;
 using System.Threading.Tasks;
 using Runner.Algorithms;
 using Runner.IBuilder;
@@ -8,10 +9,10 @@ namespace Runner
     {
         private readonly IBagBuilder _bagBuilder;
         private readonly IItemBuilder _itemBuilder;
-        private readonly IOptimizationAlgorithm _optimizationAlgorithm;
+        private readonly IEnumerable<IOptimizationAlgorithm> _optimizationAlgorithm;
         private readonly ISolutionBuilder _solutionBuilder;
 
-        public Runner(IBagBuilder bagBuilder, IItemBuilder itemBuilder, IOptimizationAlgorithm optimizationAlgorithm, ISolutionBuilder solutionBuilder)
+        public Runner(IBagBuilder bagBuilder, IItemBuilder itemBuilder, IEnumerable<IOptimizationAlgorithm> optimizationAlgorithm, ISolutionBuilder solutionBuilder)
         {
             _bagBuilder = bagBuilder;
             _itemBuilder = itemBuilder;
@@ -23,8 +24,11 @@ namespace Runner
         {
             await _bagBuilder.Build();
             await _itemBuilder.Build();
-            
-            _optimizationAlgorithm.Optimize();
+
+            foreach (var optimizationAlgorithm in _optimizationAlgorithm)
+            {
+                optimizationAlgorithm.Optimize();
+            }
 
             await _solutionBuilder.WriteSolution();
         }

@@ -30,6 +30,11 @@ namespace Infrastructure.Repository.ItemRepositoryBuilder
             return _allItems;
         }
 
+        public int GetItemCount()
+        {
+            return _allItems.Count;
+        }
+
         public void UpdateSolution(Item item)
         {
             _solution[_indexOfItem[item]] = 1;

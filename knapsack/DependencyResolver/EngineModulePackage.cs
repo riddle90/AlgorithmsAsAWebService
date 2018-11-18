@@ -10,7 +10,8 @@ namespace knapsack.DependencyResolver
     {
         public static void Bootstrap(Container container)
         {
-            container.Register<IOptimizationAlgorithm, DynamicProgrammingAlgorithm>();
+            container.Collection.Register<IOptimizationAlgorithm>(typeof(GreedyAlgorithm),
+                typeof(DynamicProgrammingAlgorithm));
             container.Register<IRunner, Runner.Runner>();
         }
     }

@@ -8,6 +8,8 @@ namespace Domain.Entities.ItemEntity
 
         List<Item> GetAllItems();
 
+        int GetItemCount();
+
         void UpdateSolution(Item item);
 
         List<int> GetSolution();

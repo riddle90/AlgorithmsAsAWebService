@@ -18,6 +18,11 @@ namespace Algorithms
         
         public void Optimize()
         {
+            if (!AlgorithmPicker.ShouldRunOnThisDataSet(this, _itemRepository.GetItemCount()))
+            {
+                return;
+            }
+            
             Bag bag = _bagRepository.GetBag();
             var items = _itemRepository.GetAllItems().OrderByDescending(x => x.ValuePerUnitWeight);
 
