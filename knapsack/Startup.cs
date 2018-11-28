@@ -40,7 +40,7 @@ namespace knapsack
             _container.AutoCrossWireAspNetComponents(app);
             _container.RegisterMvcControllers(app);
             Bootstrapper.InitializeContainer(this._container);
-
+ 
             if (env.IsDevelopment())
             {
                 app.UseDeveloperExceptionPage();

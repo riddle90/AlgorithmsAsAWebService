@@ -16,7 +16,7 @@ namespace knapsack.Controllers
         }
 
         public async Task<string> Optimize()
-        {
+        { 
             await _runner.RunOptimization();
             return "Optimization Finished";
         }
