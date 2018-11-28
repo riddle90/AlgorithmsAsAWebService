@@ -16,7 +16,7 @@ namespace Infrastructure.Repository.DtoStore
             _configuration = configuration;
         }
         
-        public async Task<string> GetBagData()
+        public async Task<string> GetFirstLine()
         {
             using (StreamReader streamReader = new StreamReader(_configuration["InputFileName"]))
             {
@@ -25,7 +25,7 @@ namespace Infrastructure.Repository.DtoStore
             }
         }
 
-        public async Task<string> GetItemData()
+        public async Task<string> GetAllData()
         {
             using (StreamReader streamReader = new StreamReader(_configuration["InputFileName"]))
             {

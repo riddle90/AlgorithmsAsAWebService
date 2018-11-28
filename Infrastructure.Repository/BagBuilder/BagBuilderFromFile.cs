@@ -19,7 +19,7 @@ namespace Infrastructure.Repository.BagBuilder
         }
         public async Task Build()
         {
-            var data = await _dtoStore.GetBagData();
+            var data = await _dtoStore.GetFirstLine();
             var properties = data.Split();
 
             var parseSuccessful = ParseValues.ParseFromStringToInt(properties[1], out int capacity);

@@ -4,9 +4,9 @@ namespace Infrastructure.Repository.DtoStore
 {
     public interface IDtoStore
     {
-        Task<string> GetBagData();
+        Task<string> GetFirstLine();
 
-        Task<string> GetItemData();
+        Task<string> GetAllData();
 
         Task WriteSolution(string finalOutput);
     }

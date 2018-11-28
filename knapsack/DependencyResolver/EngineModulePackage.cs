@@ -2,6 +2,7 @@ using Algorithms;
 using Algorithms.DynamicProgramming;
 using Runner;
 using Runner.Algorithms;
+using Runner.Mode;
 using SimpleInjector;
 
 namespace knapsack.DependencyResolver
@@ -12,7 +13,7 @@ namespace knapsack.DependencyResolver
         {
             container.Collection.Register<IOptimizationAlgorithm>(typeof(GreedyAlgorithm),
                 typeof(DynamicProgrammingAlgorithm));
-            container.Register<IRunner, Runner.Runner>();
+            container.Register<IRunner, KnapsackRunner>();
         }
     }
 }

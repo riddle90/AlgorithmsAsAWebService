@@ -21,7 +21,7 @@ namespace Infrastructure.Repository.ItemRepositoryBuilder
 
         public async Task Build()
         {
-            var data = await _dtoStore.GetItemData();
+            var data = await _dtoStore.GetAllData();
             var dataSplitByLine = data.Split('\n');
 
             bool valuesParsed = ParseValues.ParseFromStringToInt(dataSplitByLine[0].Split()[0], out int count);

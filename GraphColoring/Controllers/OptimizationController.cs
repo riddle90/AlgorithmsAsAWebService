@@ -1,9 +1,8 @@
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
-using Runner;
 using Runner.Mode;
 
-namespace knapsack.Controllers
+namespace GraphColoring.Controllers
 {
     [Route("api/[controller]")]
     [ApiController]

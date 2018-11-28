@@ -3,16 +3,16 @@ using System.Threading.Tasks;
 using Runner.Algorithms;
 using Runner.IBuilder;
 
-namespace Runner
+namespace Runner.Mode
 {
-    public class Runner : IRunner
+    public class KnapsackRunner : IRunner
     {
         private readonly IBagBuilder _bagBuilder;
         private readonly IItemBuilder _itemBuilder;
         private readonly IEnumerable<IOptimizationAlgorithm> _optimizationAlgorithm;
         private readonly ISolutionBuilder _solutionBuilder;
 
-        public Runner(IBagBuilder bagBuilder, IItemBuilder itemBuilder, IEnumerable<IOptimizationAlgorithm> optimizationAlgorithm, ISolutionBuilder solutionBuilder)
+        public KnapsackRunner(IBagBuilder bagBuilder, IItemBuilder itemBuilder, IEnumerable<IOptimizationAlgorithm> optimizationAlgorithm, ISolutionBuilder solutionBuilder)
         {
             _bagBuilder = bagBuilder;
             _itemBuilder = itemBuilder;
