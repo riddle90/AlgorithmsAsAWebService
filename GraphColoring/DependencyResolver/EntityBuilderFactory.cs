@@ -1,3 +1,4 @@
+using Infrastructure.Repository.NodeBuilder;
 using Infrastructure.Repository.SolutionBuilder;
 using Runner.IBuilder;
 using SimpleInjector;
@@ -9,7 +10,8 @@ namespace GraphColoring.DependencyResolver
         public static void Bootstrap(Container container)
         {
             
-            container.Register<ISolutionBuilder, SolutionWriterToFile>();
+            container.Register<IGraphColoringSolutionBuilder, GraphColoringSolutionBuilder>();
+            container.Register<INodeBuilder, NodeBuilder>();
         }
     }
 }

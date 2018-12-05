@@ -2,8 +2,8 @@ using System.Threading.Tasks;
 
 namespace Runner.IBuilder
 {
-    public interface ISolutionBuilder
+    public interface INodeBuilder
     {
-        Task WriteSolution();
+        Task Build();
     }
 }

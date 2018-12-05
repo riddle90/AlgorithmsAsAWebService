@@ -12,7 +12,7 @@ namespace knapsack.DependencyResolver
         {
             container.Register<IBagBuilder, BagBuilderFromFile>();
             container.Register<IItemBuilder, ItemBuilderFromFile>();
-            container.Register<ISolutionBuilder, SolutionWriterToFile>();
+            container.Register<IKnapsackSolutionBuilder, KnapsackSolutionWriterToFile>();
         }
     }
 }

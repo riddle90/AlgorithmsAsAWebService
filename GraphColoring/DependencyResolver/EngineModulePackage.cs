@@ -1,3 +1,4 @@
+using Algorithms.GraphColoringCP;
 using Runner.Algorithms;
 using Runner.Mode;
 using SimpleInjector;
@@ -10,6 +11,8 @@ namespace GraphColoring.DependencyResolver
         {
            
             container.Register<IRunner, GraphColoringRunner>();
+            container.Register<IGraphColoringAlgorithm, GraphColoringAlgorithm>();
+            container.Register<ISearchAlgorithm, SearchAlgorithm>();
         }
     }
 }
