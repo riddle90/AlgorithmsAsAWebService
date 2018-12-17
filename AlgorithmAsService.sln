@@ -1,6 +1,6 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "knapsack", "knapsack\knapsack.csproj", "{52CD74F3-94E1-43C1-B577-2AAA223C00F3}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "knapsack", "Host\knapsack\knapsack.csproj", "{52CD74F3-94E1-43C1-B577-2AAA223C00F3}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Infrastructure.Repository", "Infrastructure.Repository\Infrastructure.Repository.csproj", "{5E33C087-79D4-491F-A39C-16151D33892F}"
 EndProject
@@ -20,7 +20,9 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Algorithms", "Algorithms\Al
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Utility", "Utility\Utility.csproj", "{BC84228C-F361-405B-93B3-D445D72BE84D}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "GraphColoring", "GraphColoring\GraphColoring.csproj", "{CE41BAFD-2884-423B-B8B1-64D10E736805}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "GraphColoring", "Host\GraphColoring\GraphColoring.csproj", "{CE41BAFD-2884-423B-B8B1-64D10E736805}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Tsp", "Host\Tsp\Tsp.csproj", "{F4C495A5-B665-4C29-AB69-5259263025E2}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -56,6 +58,10 @@ Global
 		{CE41BAFD-2884-423B-B8B1-64D10E736805}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{CE41BAFD-2884-423B-B8B1-64D10E736805}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{CE41BAFD-2884-423B-B8B1-64D10E736805}.Release|Any CPU.Build.0 = Release|Any CPU
+		{F4C495A5-B665-4C29-AB69-5259263025E2}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{F4C495A5-B665-4C29-AB69-5259263025E2}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{F4C495A5-B665-4C29-AB69-5259263025E2}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{F4C495A5-B665-4C29-AB69-5259263025E2}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(NestedProjects) = preSolution
 		{52CD74F3-94E1-43C1-B577-2AAA223C00F3} = {F7AC9049-E095-4AF4-9531-AD05D8C002B2}
@@ -65,5 +71,6 @@ Global
 		{C911932A-5416-4B88-97CF-A7AD18709BBD} = {A123C757-A689-4DFA-A8FB-87133E44F70F}
 		{BC84228C-F361-405B-93B3-D445D72BE84D} = {AE8F76ED-2960-4104-A1D1-A1205007D5A0}
 		{CE41BAFD-2884-423B-B8B1-64D10E736805} = {F7AC9049-E095-4AF4-9531-AD05D8C002B2}
+		{F4C495A5-B665-4C29-AB69-5259263025E2} = {F7AC9049-E095-4AF4-9531-AD05D8C002B2}
 	EndGlobalSection
 EndGlobal

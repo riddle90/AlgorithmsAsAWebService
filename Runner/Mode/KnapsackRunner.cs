@@ -10,9 +10,9 @@ namespace Runner.Mode
         private readonly IBagBuilder _bagBuilder;
         private readonly IItemBuilder _itemBuilder;
         private readonly IEnumerable<IOptimizationAlgorithm> _optimizationAlgorithm;
-        private readonly IKnapsackSolutionBuilder _solutionBuilder;
+        private readonly ISolutionBuilder _solutionBuilder;
 
-        public KnapsackRunner(IBagBuilder bagBuilder, IItemBuilder itemBuilder, IEnumerable<IOptimizationAlgorithm> optimizationAlgorithm, IKnapsackSolutionBuilder solutionBuilder)
+        public KnapsackRunner(IBagBuilder bagBuilder, IItemBuilder itemBuilder, IEnumerable<IOptimizationAlgorithm> optimizationAlgorithm, ISolutionBuilder solutionBuilder)
         {
             _bagBuilder = bagBuilder;
             _itemBuilder = itemBuilder;

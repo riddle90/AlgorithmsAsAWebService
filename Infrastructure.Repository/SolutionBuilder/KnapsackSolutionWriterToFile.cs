@@ -7,7 +7,7 @@ using Runner.IBuilder;
 
 namespace Infrastructure.Repository.SolutionBuilder
 {
-    public class KnapsackSolutionWriterToFile : IKnapsackSolutionBuilder
+    public class KnapsackSolutionWriterToFile : ISolutionBuilder
     {
         private readonly IDtoStore _dtoStore;
         private readonly IItemRepository _itemRepository;

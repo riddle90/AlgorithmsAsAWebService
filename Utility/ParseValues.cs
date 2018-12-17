@@ -9,5 +9,10 @@ namespace Utility
 
             return isParseSuccessful;
         }
+
+        public static bool ParseFromStringToDouble(string valueAsString, out double valueAsDouble)
+        {
+            return double.TryParse(valueAsString, out valueAsDouble);
+        }
     }
 }

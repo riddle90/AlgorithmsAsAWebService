@@ -36,6 +36,8 @@ namespace Algorithms.GraphColoringCP
                     maxColorsAllowed = solution.GetColorsUsed();
                 }
 
+                //solutionInfeasible = true;
+
             }
             return bestSolution;
         }

@@ -26,7 +26,13 @@ namespace Algorithms.GraphColoringCP
 
         public DomainStore(DomainStore oldDomain)
         {
-            Domain = new Dictionary<Node, HashSet<int>>(oldDomain.Domain);
+            Domain = new Dictionary<Node, HashSet<int>>();
+
+            foreach (var node in oldDomain.Domain.Keys)
+            {
+                Domain.Add(node, new HashSet<int>(oldDomain.Domain[node]));
+            }
+            
             this.MaxColorsAllowed = oldDomain.MaxColorsAllowed;
         }
 

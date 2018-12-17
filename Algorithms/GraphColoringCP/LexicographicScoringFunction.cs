@@ -34,8 +34,17 @@ namespace Algorithms.GraphColoringCP
 
         public LexicographicScoringFunction(LexicographicScoringFunction scoringFunction)
         {
-            this.ScoringDictionary = new SortedDictionary<string, List<Node>>(scoringFunction.ScoringDictionary);
-            this.NodeScore = new Dictionary<Node, string>(scoringFunction.NodeScore);
+            this.ScoringDictionary = new SortedDictionary<string, List<Node>>();
+            this.NodeScore = new Dictionary<Node, string>();
+            foreach (var score in scoringFunction.ScoringDictionary.Keys)
+            {
+                this.ScoringDictionary.Add(score, new List<Node>(scoringFunction.ScoringDictionary[score]));
+            }
+
+            foreach (KeyValuePair<Node,string> keyValuePair in scoringFunction.NodeScore)
+            {
+                this.NodeScore.Add(keyValuePair.Key, keyValuePair.Value);
+            }
         }
 
         public void UpdateScore(Node selectedNode, DomainStore domainStore)
